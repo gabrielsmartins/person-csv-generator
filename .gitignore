@@ -1,0 +1,7 @@
+*.csv
+
+build
+.gradle
+.idea
+gradle
+

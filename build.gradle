@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+}
+
+group 'br.gabrielsmartins'
+version '1.0-SNAPSHOT'
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+
+
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.30'
+
+    implementation group: 'org.modelmapper', name: 'modelmapper', version: '2.4.4'
+
+    implementation group: 'com.opencsv', name: 'opencsv', version: '5.4'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.19.0'
+
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.20'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
+}
+
+test {
+    useJUnitPlatform()
+}
