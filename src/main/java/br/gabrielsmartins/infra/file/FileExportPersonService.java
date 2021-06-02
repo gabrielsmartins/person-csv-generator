@@ -28,7 +28,10 @@ public class FileExportPersonService implements ExportPersonService {
             log.info("Exporting file: {}", fileName);
             try(var writer = new FileWriter(fileName)){
                 Stream<PersonRecord> personRecordStream = personStream.map(this.mapper::mapToRecord);
-                StatefulBeanToCsv<PersonRecord> beanToCsv = new StatefulBeanToCsvBuilder<PersonRecord>(writer).build();
+                StatefulBeanToCsv<PersonRecord> beanToCsv = new StatefulBeanToCsvBuilder<PersonRecord>(writer)
+                                                                 .withSeparator(';')
+                                                                 .withApplyQuotesToAll(false)
+                                                                 .build();
                 beanToCsv.write(personRecordStream);
                 log.info("File {} exported successfully", fileName);
             }
@@ -36,6 +39,5 @@ public class FileExportPersonService implements ExportPersonService {
             e.printStackTrace();
             log.error("Error exporting file", e);
         }
-
     }
 }

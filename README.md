@@ -1,4 +1,4 @@
-CSV Generator using OpenCSV Library
+# CSV Generator using OpenCSV Library
 
 This application is an example of OpenCSV usage.
 
@@ -71,7 +71,7 @@ public class Phone {
 In the end we can see the result of generation file:
 
 ```
-"PERSON_ID","PERSON_NAME","PHONES"
-"1","John Wick","PhoneRecord(code=55, number=119000202020)"
-"2","Neo","PhoneRecord(code=55, number=119000202020)"
+PERSON_ID;PERSON_NAME;PHONES
+1;John Wick;PhoneRecord(code=55, number=119000202020)
+2;Neo;PhoneRecord(code=55, number=119000202020)
 ```
